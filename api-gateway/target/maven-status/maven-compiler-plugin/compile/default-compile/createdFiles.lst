@@ -1,0 +1,7 @@
+com/sofka/gateway/dto/ClienteDTO.class
+com/sofka/gateway/config/GatewayConfig.class
+com/sofka/gateway/config/RestTemplateConfig.class
+com/sofka/gateway/ApiGatewayApplication.class
+com/sofka/gateway/dto/EstadoCuentaDTO.class
+com/sofka/gateway/dto/MovimientoDTO.class
+com/sofka/gateway/dto/CuentaDTO.class
