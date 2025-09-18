@@ -14,10 +14,15 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./customer-service/src/main/resources/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
-      - ./customer-service/src/main/resources/data.sql:/docker-entrypoint-initdb.d/02-data.sql
+      - ./init-databases.sql:/docker-entrypoint-initdb.d/00-init-databases.sql
+      - ./customer-service/src/main/resources/schema.sql:/docker-entrypoint-initdb.d/01-customer-schema.sql
+      - ./account-service/src/main/resources/schema.sql:/docker-entrypoint-initdb.d/02-account-schema.sql
     networks:
       - sofka-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
 
   # RabbitMQ
   rabbitmq:
@@ -69,9 +74,12 @@ services:
     networks:
       - sofka-network
     depends_on:
-      - mysql
-      - rabbitmq
-      - service-discovery
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      service-discovery:
+        condition: service_started
 
   # Account Service
   account-service:
@@ -92,9 +100,12 @@ services:
     networks:
       - sofka-network
     depends_on:
-      - mysql
-      - rabbitmq
-      - service-discovery
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      service-discovery:
+        condition: service_started
 
   # API Gateway
   api-gateway:
