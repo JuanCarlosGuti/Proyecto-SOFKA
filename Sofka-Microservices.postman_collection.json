@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "sofka-microservices-collection",
 		"name": "Sofka Microservices - Banking System",
-		"description": "Colección completa para probar los microservicios del sistema bancario",
+		"description": "Colección completa para probar los microservicios del sistema bancario a través del API Gateway",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -41,13 +41,13 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"api",
 								"clientes"
 							]
 						},
-						"description": "Obtener todos los clientes"
+						"description": "Obtener todos los clientes (a través del API Gateway)"
 					}
 				},
 				{
@@ -61,14 +61,14 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"api",
 								"clientes",
 								"activos"
 							]
 						},
-						"description": "Obtener solo los clientes activos"
+						"description": "Obtener solo los clientes activos (a través del API Gateway)"
 					}
 				},
 				{
@@ -91,13 +91,13 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"api",
 								"clientes"
 							]
 						},
-						"description": "Crear un nuevo cliente (dispara evento asíncrono)"
+						"description": "Crear un nuevo cliente (dispara evento asíncrono) - a través del API Gateway"
 					}
 				},
 				{
@@ -111,14 +111,14 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"api",
 								"clientes",
 								"1"
 							]
 						},
-						"description": "Obtener un cliente por su ID"
+						"description": "Obtener un cliente por su ID (a través del API Gateway)"
 					}
 				},
 				{
@@ -132,7 +132,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"api",
 								"clientes",
@@ -140,7 +140,7 @@
 								"CLIASYNC001"
 							]
 						},
-						"description": "Obtener un cliente por su ClienteId"
+						"description": "Obtener un cliente por su ClienteId (a través del API Gateway)"
 					}
 				},
 				{
@@ -163,14 +163,14 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"api",
 								"clientes",
 								"1"
 							]
 						},
-						"description": "Actualizar un cliente existente"
+						"description": "Actualizar un cliente existente (a través del API Gateway)"
 					}
 				},
 				{
@@ -193,7 +193,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"api",
 								"clientes",
@@ -201,7 +201,7 @@
 								"estado"
 							]
 						},
-						"description": "Cambiar el estado de un cliente (true/false)"
+						"description": "Cambiar el estado de un cliente (true/false) - a través del API Gateway"
 					}
 				}
 			]
@@ -220,13 +220,13 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"cuentas"
 							]
 						},
-						"description": "Obtener todas las cuentas"
+						"description": "Obtener todas las cuentas (a través del API Gateway)"
 					}
 				},
 				{
@@ -240,14 +240,14 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"cuentas",
 								"activas"
 							]
 						},
-						"description": "Obtener solo las cuentas activas"
+						"description": "Obtener solo las cuentas activas (a través del API Gateway)"
 					}
 				},
 				{
@@ -270,13 +270,13 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"cuentas"
 							]
 						},
-						"description": "Crear una nueva cuenta"
+						"description": "Crear una nueva cuenta (a través del API Gateway)"
 					}
 				},
 				{
@@ -290,7 +290,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"cuentas",
@@ -298,7 +298,7 @@
 								"1234567890"
 							]
 						},
-						"description": "Obtener una cuenta por su número"
+						"description": "Obtener una cuenta por su número (a través del API Gateway)"
 					}
 				},
 				{
@@ -312,7 +312,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"cuentas",
@@ -320,7 +320,7 @@
 								"CLIASYNC001"
 							]
 						},
-						"description": "Obtener todas las cuentas de un cliente"
+						"description": "Obtener todas las cuentas de un cliente (a través del API Gateway)"
 					}
 				},
 				{
@@ -343,45 +343,42 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"cuentas",
 								"6"
 							]
 						},
-						"description": "Actualizar una cuenta existente"
+						"description": "Actualizar una cuenta existente (a través del API Gateway)"
 					}
 				},
 				{
 					"name": "Change Account Status",
 					"request": {
 						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "false"
-						},
+						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/api/cuentas/6/estado",
+							"raw": "http://localhost:8080/api/cuentas/6/estado?estado=false",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"cuentas",
 								"6",
 								"estado"
+							],
+							"query": [
+								{
+									"key": "estado",
+									"value": "false"
+								}
 							]
 						},
-						"description": "Cambiar el estado de una cuenta (true/false)"
+						"description": "Cambiar el estado de una cuenta (true/false) - a través del API Gateway. Usar ?estado=true o ?estado=false"
 					}
 				}
 			]
@@ -409,13 +406,13 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"movimientos"
 							]
 						},
-						"description": "Registrar un movimiento de crédito (depósito)"
+						"description": "Registrar un movimiento de crédito (depósito) - a través del API Gateway"
 					}
 				},
 				{
@@ -438,13 +435,13 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"movimientos"
 							]
 						},
-						"description": "Registrar un movimiento de débito (retiro)"
+						"description": "Registrar un movimiento de débito (retiro) - a través del API Gateway"
 					}
 				},
 				{
@@ -458,7 +455,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"movimientos",
@@ -466,7 +463,7 @@
 								"1234567890"
 							]
 						},
-						"description": "Obtener todos los movimientos de una cuenta"
+						"description": "Obtener todos los movimientos de una cuenta (a través del API Gateway)"
 					}
 				},
 				{
@@ -480,7 +477,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"movimientos",
@@ -489,7 +486,7 @@
 								"saldo"
 							]
 						},
-						"description": "Obtener el saldo actual de una cuenta"
+						"description": "Obtener el saldo actual de una cuenta (a través del API Gateway)"
 					}
 				},
 				{
@@ -503,7 +500,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"movimientos",
@@ -522,7 +519,7 @@
 								}
 							]
 						},
-						"description": "Obtener movimientos en un rango de fechas"
+						"description": "Obtener movimientos en un rango de fechas (a través del API Gateway)"
 					}
 				}
 			]
@@ -541,7 +538,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"reportes",
@@ -559,7 +556,7 @@
 								}
 							]
 						},
-						"description": "Generar estado de cuenta para un período específico"
+						"description": "Generar estado de cuenta para un período específico (a través del API Gateway)"
 					}
 				},
 				{
@@ -573,7 +570,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"reportes",
@@ -595,7 +592,7 @@
 								}
 							]
 						},
-						"description": "Obtener movimientos por rango de fechas con filtro"
+						"description": "Obtener movimientos por rango de fechas con filtro (a través del API Gateway)"
 					}
 				},
 				{
@@ -609,7 +606,7 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"api",
 								"reportes",
@@ -628,7 +625,7 @@
 								}
 							]
 						},
-						"description": "Obtener todos los movimientos de un cliente en un período"
+						"description": "Obtener todos los movimientos de un cliente en un período (a través del API Gateway)"
 					}
 				}
 			]
@@ -708,12 +705,12 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"swagger-ui.html"
 							]
 						},
-						"description": "Acceder a la documentación Swagger del Customer Service"
+						"description": "Acceder a la documentación Swagger del Customer Service (a través del API Gateway)"
 					}
 				},
 				{
@@ -727,12 +724,12 @@
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8080",
 							"path": [
 								"swagger-ui.html"
 							]
 						},
-						"description": "Acceder a la documentación Swagger del Account Service"
+						"description": "Acceder a la documentación Swagger del Account Service (a través del API Gateway)"
 					}
 				}
 			]
@@ -765,13 +762,8 @@
 			"type": "string"
 		},
 		{
-			"key": "customerServicePort",
-			"value": "8081",
-			"type": "string"
-		},
-		{
-			"key": "accountServicePort",
-			"value": "8082",
+			"key": "gatewayPort",
+			"value": "8080",
 			"type": "string"
 		},
 		{
